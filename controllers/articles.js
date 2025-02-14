@@ -9,6 +9,18 @@ const getAllArticles = (req, res) => {
     })
 }
 
+const deleteArticleBySlug =(req, res) =>{
+// Check if the 'deleted_articles' table exists
+   let sql = `SHOW TABLES LIKE 'deleted_articles'`;
+    db.query(sql, (error, result) => {
+       let article = result[0]
+        console.log(article)
+    // If the table does not exist, create it
+
+     })
+}
+
+
 const getArticleBySlug = (req, res) => {
     let sql = `SELECT * FROM article WHERE slug="${req.params.slug}"`
     db.query(sql, (error, result) => {
@@ -27,5 +39,6 @@ const getArticleBySlug = (req, res) => {
 
 module.exports = {
     getAllArticles,
-    getArticleBySlug
+    getArticleBySlug,
+    deleteArticleBySlug
 }
