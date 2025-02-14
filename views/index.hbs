@@ -3,7 +3,8 @@
 <div class="article-list">
     {{#articles}}
     <article>
-        <button class="delete-button">Delete</button>
+        <a href="/article/delete/{{slug}}">delete</a>
+
         <a href="/article/{{slug}}">
             <img src="/images/{{image}}">
         </a>
