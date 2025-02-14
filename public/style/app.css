@@ -27,6 +27,12 @@
     padding: 12px;
 }
 
+.delete-button {
+    padding: 15px 15px 16px 15px;
+    color:#eb5050;
+
+}
+
 body {
     background-color: #eee;
     font-family: 'Noto Sans', sans-serif;
@@ -126,3 +132,4 @@ table td, table th {
 table th {
     background-color: #eee;
 }
+
