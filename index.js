@@ -4,6 +4,6 @@ const articleRoutes = require('./routes/articles')
 
 app.use('/', articleRoutes)
 
-app.listen(3012, () => {
+app.listen(3020, () => {
     console.log('web server is connected')
 })
