@@ -28,7 +28,7 @@
 }
 
 .delete-button {
-    padding: 15px 15px 16px 15px;
+    float: right;
     color:#eb5050;
 
 }
