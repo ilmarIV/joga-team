@@ -19,7 +19,7 @@ const deleteArticleBySlug = (req, res) => {
     }
     // If the table does not exist, create it
     if (result.length == 0) {
-      // Table does not exist
+      // Table 'deleted_articles' does not exist
       let sql = `
       CREATE TABLE IF NOT EXISTS deleted_articles (
       id int NOT NULL AUTO_INCREMENT,
@@ -42,7 +42,7 @@ const deleteArticleBySlug = (req, res) => {
       });
     }
 
-    // Table exists
+    // Table 'deleted_articles' exists
 
     let sql = `
             INSERT IGNORE INTO deleted_articles (name, slug, image, body, published, author_id)
