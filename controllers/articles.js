@@ -64,9 +64,24 @@ const deleteArticleBySlug = (req, res) => {
     });
 
     //Finally delete the original article.
+    let sql2 = `DELETE FROM article WHERE slug ="${req.params.slug}"`;
+    db.query(sql2, [req.params.slug], (error, result) => {
+      if (error) {
+        console.error("Database error:", error);
+        return res.status(500).json({ error: "Database error" });
+      }
 
-
+      if (result.affectedRows > 0) {
+        console.log(`Article "${req.params.slug}" deleted from articles.`)
+        return res.json({ success: true, message: "Article deleted successfully." });
+      } else {
+        console.log(`Article "${req.params.slug}" not found in articles.`)
+        return res.json({ success: false, message: "Article not found." });
+      }
+    });
   });
+
+
 };
 
 const getArticleBySlug = (req, res) => {
