@@ -27,9 +27,15 @@
     padding: 12px;
 }
 
-.delete-button {
+.delete-link {
     float: right;
-    color:#eb5050;
+    background-color:#eb5050;
+    margin-bottom: 10px;
+}
+
+.restore-link {
+    float: right;
+    background-color:limegreen;
     margin-bottom: 10px;
 
 }
