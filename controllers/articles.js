@@ -5,6 +5,7 @@ const getAllArticles = (req, res) => {
   db.query(sql, (error, result) => {
     res.render("index", {
       articles: result,
+      noArticles: result.length === 0,
     });
   });
 };
@@ -57,9 +58,13 @@ const deleteArticleBySlug = (req, res) => {
       }
 
       if (result.affectedRows > 0) {
-        console.log(`Article "${req.params.slug}" stored to deleted_articles successfully!`)
+        console.log(
+          `Article "${req.params.slug}" stored to deleted_articles successfully!`
+        );
       } else {
-        console.log(`Article "${req.params.slug}" already exists in deleted_articles.`)
+        console.log(
+          `Article "${req.params.slug}" already exists in deleted_articles.`
+        );
       }
     });
 
@@ -72,16 +77,17 @@ const deleteArticleBySlug = (req, res) => {
       }
 
       if (result.affectedRows > 0) {
-        console.log(`Article "${req.params.slug}" deleted from articles.`)
-        return res.json({ success: true, message: "Article deleted successfully." });
+        console.log(`Article "${req.params.slug}" deleted from articles.`);
+        return res.json({
+          success: true,
+          message: "Article deleted successfully.",
+        });
       } else {
-        console.log(`Article "${req.params.slug}" not found in articles.`)
+        console.log(`Article "${req.params.slug}" not found in articles.`);
         return res.json({ success: false, message: "Article not found." });
       }
     });
   });
-
-
 };
 
 const getArticleBySlug = (req, res) => {
@@ -100,10 +106,37 @@ const getArticleBySlug = (req, res) => {
   });
 };
 
+const restoreArticles = (req, res) => {
+  let sql = `INSERT INTO article SELECT * FROM deleted_articles;`;
+  db.query(sql, (error, result) => {
+    if (error) {
+      console.error("Database error:", error);
+      return res.status(500).json({ success: false, error: "Database error" });
+    }
+    console.log("Restored 'article'");
+    let sql2 = `DROP TABLE deleted_articles;`;
+
+    db.query(sql2, (error, result) => {
+      if (error) {
+        console.error("Database error:", error);
+        return res.status(500).json({ success: false, error: "Database error" });
+      }
+      console.log("Deleted 'deleted_articles'");
+      res.json({
+        success: true,
+        message: "Restored articles successfully and deleted 'deleted_articles'!",
+      });
+    });
+  });
+
+  
+};
+
 module.exports = {
   getAllArticles,
   getArticleBySlug,
   deleteArticleBySlug,
+  restoreArticles,
 };
 
 //{}

@@ -30,3 +30,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const restoreBtn = document.getElementById("restoreArticles");
+    
+    if (restoreBtn) { // Check if element exists to avoid errors
+        restoreBtn.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevents navigation
+
+            fetch("/restore", { method: "GET" })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Articles restored successfully!");
+                        location.reload(); // Refresh the page to reflect changes
+                    } else {
+                        alert("Error restoring articles: " + data.error);
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+        });
+    }
+});
