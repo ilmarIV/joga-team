@@ -1,16 +1,21 @@
 <h1>Homepage</h1>
 
 <div class="article-list">
-    {{#articles}}
+  {{#articles}}
     <article>
-        <a href="/article/delete/{{slug}}">delete</a>
+      <a href="/article/delete/{{slug}}" class="delete-link">delete</a>
 
-        <a href="/article/{{slug}}">
-            <img src="/images/{{image}}">
-        </a>
-        <h2>
-            <a href="/article/{{slug}}">{{name}}</a>
-        </h2>
+      <a href="/article/{{slug}}">
+        <img src="/images/{{image}}" />
+      </a>
+      <h2>
+        <a href="/article/{{slug}}">{{name}}</a>
+      </h2>
     </article>
-    {{/articles}}
+  {{/articles}}
+  {{#noArticles}}
+    <h1>NO ARTICLES LEFT</h1>
+    <br />
+    <a href="#" id="restoreArticles" class="restore-link">Restore All Articles</a>
+  {{/noArticles}}
 </div>
