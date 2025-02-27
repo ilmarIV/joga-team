@@ -56,9 +56,13 @@ git clone git@github.com:ilmarIV/joga-team.git
 
 Avage veebibrauser ja minge aadressile http://localhost:3020
 
+---
+
 # Projekti kasutamine
 
 Veebibrauseris on võimalik avada artikleid, avada nende tekste, vaadata pilte ja artikleid kustutada. Lisaks on võimalik kõikide artiklite kustutamise korral need taastada.
+
+---
 
 # Arendajad
 
