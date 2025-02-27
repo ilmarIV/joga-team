@@ -9,25 +9,20 @@ Tegu on mitme lehelise veebilehega, kust on võimalik lugeda erinevaid jooga tee
 
 Veebilehe toimimiseks vajalikud tarkvarad on:
 
-<br/>
-
 ## Node.js
 
 Node.js on vajalik javascripti käivitamiseks väljaspool brauserit. See võimaldab javascripti kasutada serveri poolsete rakenduste loomiseks.
-
-<br/>
 
 ### Node paigaldamine
 
 sudo apt install nodejs<br/>
 node -v<br/>
 sudo apt install npm<br/>
+<br/>
 
 ## mysql2
 
 Mysql2 on andmebaasihaldussüsteem. See võimaldab andmeid salvestada, hallata ja töödelda.
-
-<br/>
 
 ### mysql2 paigaldamine
 
@@ -39,8 +34,6 @@ npm install mysql2
 
 Express on kiire ja minimalistlik Node.js veebiraamistik, mis lihtsustab HTTP-serverite ja API-de loomist.<br/>
 Express-Handlebars on mallimootor Expressi jaoks, mis võimaldabdünaamiliselt renderdada HTML-malle Handlebarsi süntaksiga.
-
-<br/>
 
 ### Express ja Express-handlebars paigaldamine
 
@@ -61,11 +54,11 @@ git clone git@github.com:ilmarIV/joga-team.git
 # Projekti käivitamine
 
 - esmakordselt:<br/>
-  npm install<br/>
-  npm start<br/>
+    npm install<br/>
+    npm start<br/>
 
 - korduvalt:<br/>
-  npm start<br/>
+    npm start<br/>
 
 Avage veebibrauser ja minge aadressile http://localhost:3020
 
