@@ -1,7 +1,37 @@
-tekst
+# Kirjeldus
 
-# tekst
+Tegu on mitme lehelise veebilehega, kust on võimalik lugeda erinevaid jooga teemalisi artikleid. Kõik artiklid on ilustatud piltidega ning avanevad uuel lehel. Andmeid hoitakse mysql andmebaasis.
 
-## tekst
+---
 
-l6pp
+# Vajalik Tarkkvara
+
+Veebilehe toimimiseks vajalikud tarkvarad on:
+
+## Node.js
+
+Node.js on vajalik javascripti käivitamiseks väljaspool brauserit. See võimaldab javascripti kasutada serveri poolsete rakenduste loomiseks.
+
+#### Node paigaldamine
+
+sudo apt install nodejs
+node -v
+sudo apt install npm
+
+## mysql2
+
+Mysql2 on andmebaasihaldussüsteem. See võimaldab andmeid salvestada, hallata ja töödelda.
+
+#### mysql2 paigaldamine
+
+npm install mysql2
+
+## Express ja Express handlebars
+
+Express on kiire ja minimalistlik Node.js veebiraamistik, mis lihtsustab HTTP-serverite ja API-de loomist.
+Express-Handlebars on mallimootor Expressi jaoks, mis võimaldabdünaamiliselt renderdada HTML-malle Handlebarsi süntaksiga.
+
+#### Express ja Express-handlebars paigaldamine
+
+npm install express express-handlebars
+
