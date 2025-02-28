@@ -46,7 +46,7 @@ npm install express express-handlebars
 
 git clone https://github.com/ilmarIV/joga-team.git<br/>
 või<br/>
-`git clone git@github.com:ilmarIV/joga-team.git`
+git clone git@github<!-- -->.com:ilmarIV/joga-team.git
 
 <br/>
 <br/>
